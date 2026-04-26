@@ -5,7 +5,6 @@ import { fadeUp, stagger } from "../utils/animations";
 import { IconCode2, IconLayers, IconStar, IconZap } from "../icons/Icons";
 import SectionTitle from "./SectionTitle";
 
-
 export default function About() {
   return (
     <section id="about" className="py-32 px-6">
