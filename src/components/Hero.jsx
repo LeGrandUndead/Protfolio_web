@@ -42,99 +42,41 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 pt-20">
       <div className="max-w-4xl w-full">
-        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono mb-8 border"
           style={{ borderColor: COLORS.border, color: COLORS.textDim, background: "rgba(59,130,246,0.08)" }}
         >
-          <motion.span
-            className="w-2 h-2 rounded-full"
-            style={{ background: "#22c55e" }}
-            animate={{ opacity: [1, 0.4, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-          Disponible pour un stage / alternance Master
+          <span className="w-2 h-2 rounded-full bg-green-500" />
+          Recherche Alternance en Master (ASR / IA / Sécurité)
         </motion.div>
 
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="text-5xl md:text-7xl font-black mb-4 leading-none"
-          style={{ fontFamily: "'Space Grotesk', sans-serif", color: COLORS.text }}
+        <motion.h1 
+          className="text-5xl md:text-7xl font-black mb-4" 
+          style={{ color: COLORS.text }}
         >
           {NAME}
         </motion.h1>
 
-        {/* Typewriter */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="text-2xl md:text-4xl font-bold mb-6"
-        >
-          <span style={{ color: COLORS.textMuted }}>Je construis </span>
-          <TypewriterText words={["des apps React.", "des APIs Node.js.", "des scripts Python.", "des UIs qui captivent."]} />
+        <motion.div className="text-2xl md:text-4xl font-bold mb-6">
+          <span style={{ color: COLORS.textMuted }}>Expertise en </span>
+          <TypewriterText words={["Systèmes & Réseaux.", "Deep Learning.", "Développement Sécurisé.", "Unity & 3D.", "Data Engineering."]} />
         </motion.div>
 
-        {/* Sub */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="text-base md:text-lg max-w-xl mb-10 leading-relaxed"
-          style={{ color: COLORS.textDim }}
-        >
-          Étudiant en L3 Informatique → Master. Passionné par les interfaces réactives, les architectures propres et tout ce qui rend le code élégant.
-        </motion.p>
+        <p className="text-base md:text-lg max-w-2xl mb-10 leading-relaxed" style={{ color: COLORS.textDim }}>
+          Futur ingénieur spécialisé dans la conception d'architectures logicielles robustes. 
+          Expertise prouvée en nettoyage de données massives aux USA [cite: 34] et en analyse d'images par IA au laboratoire CRESTIC[cite: 43, 134].
+        </p>
 
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1 }}
-          className="flex flex-wrap gap-4"
-        >
-          <motion.a
-            href="#projects"
-            whileHover={{ scale: 1.04, boxShadow: `0 0 24px ${COLORS.neonBlue}55` }}
-            whileTap={{ scale: 0.96 }}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm"
-            style={{ background: `linear-gradient(135deg, ${COLORS.neonViolet}, #4f46e5)`, color: "#fff" }}
-          >
-            Voir mes projets <IconArrowRight size={16} />
-          </motion.a>
-          <motion.a
-            href={LINKS.cv}
-            download
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sm border"
-            style={{ borderColor: COLORS.border, color: COLORS.textDim, background: "rgba(255,255,255,0.03)" }}
-          >
-            <IconDownload size={16} /> Télécharger CV
-          </motion.a>
-        </motion.div>
-
-        {/* Scroll hint */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="text-xs font-mono" style={{ color: COLORS.textMuted }}>scroll</span>
-          <motion.div
-            className="w-px h-10"
-            style={{ background: `linear-gradient(to bottom, ${COLORS.neonBlue}, transparent)` }}
-            animate={{ scaleY: [0, 1, 0], originY: 0 }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-          />
-        </motion.div>
+        <div className="flex flex-wrap gap-4">
+          <a href="#projects" className="px-6 py-3 rounded-xl font-semibold text-sm bg-indigo-600 text-white">
+            Parcourir mes travaux
+          </a>
+          <a href={LINKS.cv} download className="px-6 py-3 rounded-xl font-semibold text-sm border" style={{ color: COLORS.textDim }}>
+             Mon CV Complet (PDF)
+          </a>
+        </div>
       </div>
     </section>
   );
